@@ -1,2 +1,6 @@
 # PHPOOP
-Curso de PHP Object Orientes Programming | Sábados por la mañana código 41119
+> Curso de PHP Object Oriented Programming |   
+> Sábados por la mañana código 41119 |  
+> sensei: Marcos Pinardi |   
+
+
