@@ -2,6 +2,9 @@
     require 'funciones.php';
     require 'Persona.php';
     $Persona = new Persona;
+    //$Persona->nombre = 'Rick';
+    /* no se puede acceder porque es private */
+
     //mostrar($Persona);
 ?>
 <!doctype html>
