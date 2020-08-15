@@ -1,6 +1,6 @@
 <?php
 
-    class Persona
+    class Persona2
     {
         //atributos
         private $nombre;

@@ -4,6 +4,8 @@
     $Persona = new Persona;
     //$Persona->nombre = 'Rick';
     /* no se puede acceder porque es private */
+    $Persona->setNombre('Rick');
+    $Persona->setApellido('Sanchez');
 
     //mostrar($Persona);
 ?>
