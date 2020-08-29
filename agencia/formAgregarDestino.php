@@ -1,5 +1,9 @@
 <?php
-  
+
+    require 'clases/Conexion.php';
+    require 'clases/Region.php';
+    $Region = new Region;
+        $regiones = $Region->listarRegiones();
     include 'includes/header.php';
 ?>
     
@@ -22,6 +26,13 @@
                     <select name="regID" id="regID" 
                             class="form-control" required>
                         <option value="">Seleccione una región</option>
+<?php
+                foreach ($regiones as $region){
+?>
+                        <option value="<?= $region['regID'] ?>"><?= $region['regNombre'] ?></option>
+<?php
+                }
+?>
                     </select>
                     </div>
 
@@ -31,7 +42,8 @@
                                 <div class="input-group-text">@</div>
                             </div>
                             <input type="number" name="destPrecio"
-                                   class="form-control" placeholder="Ingrese el precio" required>
+                                   class="form-control"
+                                   placeholder="Ingrese el precio" required>
                         </div>
                     </div>
 
@@ -41,7 +53,8 @@
                                 <div class="input-group-text">#</div>
                             </div>
                             <input type="number" name="destAsientos"
-                                   class="form-control" placeholder="Ingrese cantidad de Asientos Totales" required>
+                                   class="form-control"
+                                   placeholder="Ingrese cantidad de Asientos Totales" required>
                         </div>
                     </div>
 
@@ -51,7 +64,8 @@
                                 <div class="input-group-text">#</div>
                             </div>
                             <input type="number" name="destDisponibles"
-                                   class="form-control" placeholder="Ingrese cantidad de Asientos Disponibles" required>
+                                   class="form-control"
+                                   placeholder="Ingrese cantidad de Asientos Disponibles" required>
                         </div>
                     </div>
 
