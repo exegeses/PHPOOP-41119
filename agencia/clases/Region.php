@@ -36,7 +36,7 @@
 
             $this->setRegID( $datosRegion['regID'] );
             $this->setRegNombre( $datosRegion['regNombre'] );
-            return $stmt;
+            return $this;
 
         }
 
