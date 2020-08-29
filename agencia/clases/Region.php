@@ -46,7 +46,7 @@
             $regNombre = $_POST['regNombre'];
             $link = Conexion::conectar();
             $sql = "UPDATE regiones
-                       SET regNombre = :regNombre,
+                       SET regNombre = :regNombre
                      WHERE regID = :regID";
             $stmt = $link->prepare($sql);
             $stmt->bindParam(':regNombre', $regNombre, PDO::PARAM_STR);
@@ -60,6 +60,8 @@
             return false;
 
         }
+
+        ### TAREA: hacer agregarRegion()
         
         public function getRegID()
         {
