@@ -20,7 +20,7 @@
             <?= $mensaje ?>
             <br>
             <a href="adminRegiones.php" class="btn btn-outline-secondary">
-                volver a panel de reciones
+                volver a panel de regiones
             </a>
         </div>
 
