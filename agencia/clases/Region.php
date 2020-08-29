@@ -5,6 +5,10 @@
         private $regID;
         private $regNombre;
 
+
+        /**
+         * @return array
+         */
         public function listarRegiones()
         {
             $link = Conexion::conectar();

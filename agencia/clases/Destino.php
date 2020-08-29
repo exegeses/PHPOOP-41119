@@ -14,10 +14,12 @@
         {
             $link = Conexion::conectar();
             $sql = "SELECT destID, destNombre, 
-                            regID, destPrecio, 
+                            d.regID, r.regNombre, 
+                            destPrecio, 
                             destAsientos, destDisponibles, 
                             destActivo 
-                        FROM destinos";
+                        FROM destinos d, regiones r
+                        WHERE d.regID = r.regID";
             $stmt = $link->prepare($sql);
             $stmt->execute();
 
