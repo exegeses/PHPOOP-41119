@@ -15,7 +15,7 @@
                 Contraseña: <br>
                 <input type="password" name="usuClave" class="form-control">
 
-                <button class="btn btn-dark btn-block">
+                <button class="btn btn-dark btn-block my-3">
                     Ingresar a sistema
                 </button>
             </form>
