@@ -1,8 +1,6 @@
 <?php
 
-    require 'clases/Conexion.php';
-    require 'clases/Region.php';
-    require 'clases/Destino.php';
+    require 'config/config.php';
     $Region = new Region;
         $regiones = $Region->listarRegiones();
     $Destino = new Destino();
