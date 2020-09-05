@@ -41,7 +41,9 @@
 
         public function autenticar()
         {
-
+            if(!isset($_SESSION['login'])){
+                header('formLogin.php?error=1');
+            }
         }
         
     }

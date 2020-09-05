@@ -20,7 +20,21 @@
                 </button>
             </form>
         </div>
-        
+
+<?php
+        if(isset($_GET['error'])){
+?>
+            <script>
+                Swal.fire(
+                    'Error de logueo',
+                    'Usuario y/o Clave incorrectos',
+                    'error'
+                );
+            </script>
+<?php
+        }
+?>
+
     </main>
 <?php
     include 'includes/footer.php';
