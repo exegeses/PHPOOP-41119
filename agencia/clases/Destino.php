@@ -5,6 +5,7 @@
         private $destID;
         private $destNombre;
         private $regID;
+        protected $regNombre;
         private $destPrecio;
         private $destAsientos;
         private $destDisponibles;
@@ -25,6 +26,38 @@
 
             $destinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $destinos;
+        }
+
+
+        public function verDestinoPorID()
+        {
+            $destID = $_GET['destID'];
+            $link = Conexion::conectar();
+            $sql = "SELECT destID, destNombre, 
+                            destinos.regID, regNombre,  
+                            destPrecio, 
+                            destAsientos, destDisponibles,
+                            destActivo
+                       FROM destinos, regiones
+                       WHERE destinos.regID = regiones.regID
+                         AND destID = :destID";
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':destID', $destID, PDO::PARAM_INT);
+
+            if ( $stmt->execute() ){
+                $destino = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->setDestID($destID);
+                $this->setDestNombre($destino['destNombre']);
+                $this->setRegID($destino['regID']);
+                /// nombre de la regíon
+                $this->setRegNombre($destino['regNombre']);
+                $this->setDestPrecio($destino['destPrecio']);
+                $this->setDestAsientos($destino['destAsientos']);
+                $this->setDestDisponibles($destino['destDisponibles']);
+                $this->setDestActivo(1);
+                return true;
+            }
+            return false;
         }
 
         /**
@@ -74,6 +107,24 @@
         {
             $this->regID = $regID;
         }
+
+        /**
+         * @return mixed
+         */
+        public function getRegNombre()
+        {
+            return $this->regNombre;
+        }
+
+        /**
+         * @param mixed $regNombre
+         */
+        public function setRegNombre($regNombre): void
+        {
+            $this->regNombre = $regNombre;
+        }
+
+
 
         /**
          * @return mixed
